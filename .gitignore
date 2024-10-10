@@ -1,6 +1,7 @@
-#cypress-express-mark/**
+cypress-express-mark/node_modules/**
 apps/markL/api/node_modules/**
 apps/markL/api/package-lock.json
 apps/markL/web/node_modules/**
 apps/markL/web/package-lock.json
 apps/markL/api/src/database/**
+/node_modules/**
