@@ -5,3 +5,4 @@ apps/markL/web/node_modules/**
 apps/markL/web/package-lock.json
 apps/markL/api/src/database/**
 /node_modules/**
+/.idea/**
