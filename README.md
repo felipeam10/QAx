@@ -35,9 +35,11 @@ Many companies still perform tests manually.
 
    ````https://github.com/felipeam10/QAx````
 
-2. In your preference IDE, open the project from the directory it was cloned to. 
+2. In your preference IDE, open the project from the directory it was cloned to. I sugest that you use VS Code.
 
-   3. 
+3. In your PC needs to node.js version 18.20.4 (stable and recommended version).
+
+4. Install Yarn too (in CMD open how administrator: type "corepack enable". After return to terminal and type "yarn --version"). If return the version, it's worked. 
 
 [Return to Index](#index)
 
