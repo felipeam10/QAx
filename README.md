@@ -1,4 +1,4 @@
-<div align="left">
+         <div align="left">
   <h1><strong>Cypress express mark</strong></h1>
 </div>
 
@@ -52,6 +52,20 @@ Many companies still perform tests manually.
    - ````mkdir apps```` --> "apps": To store the software targeted for training.
    - ````mkdir projects```` --> "projects": To store automation projects and others.
 
+3. Create a Directory for the Project:
+   - In the terminal, create a directory for the project and navigate to it.
+   - Example: ````mkdir Cypress-Express-Mark```` && ````cd Cypress-Express-Mark````.
+
+4. Initialize the Node.js Project:
+   - Initialize the Node.js project with the ````yarn init```` command.
+   - Answer the questions to configure package.json, if applicabe.
+
+5. Install Cypress as a Development Dependency:
+   - Install Cypress with the ````yarn add cypress -D command````.
+
+6. Open Cypress:
+   - After installation, open Cypress with ````yarn cypress open````.
+
 [Return to Index](#index)
 
 ## Preparing the test environment
@@ -62,7 +76,7 @@ Many companies still perform tests manually.
 
 
 2. Moving Folders:
-   - Move the MarkL folder to the ````C:\X\Apps```` directory.
+   - Move the MarkL folder to the ````C:\QAx\Apps```` directory.
    - Delete the .zip file for your organization, if you find it necessary.
 
 
@@ -73,25 +87,25 @@ Many companies still perform tests manually.
 
 4. Installing API Dependencies:
    - Navigate to the API folder with cd API.
-   - Install Node.js dependencies with npm install.
+   - Install Node.js dependencies with ````npm install````.
  
   
 5. Initializing the Database:
-   - Run npm run db:init to initialize the SQLite database.
+   - Run ````npm run db:init```` to initialize the SQLite database.
 
 
 6. Running the API:
-   - Put the API online with npm run dev.
+   - Put the API online with ````npm run dev````.
 
 
 7. Configuring the Web Application:
-   - Open a new terminal window and navigate to the web folder with ````cd /c/X/Apps/MarkL/web```` .
-   - Install web application dependencies with npm install.
-   - Put the web application online with npm run dev.
+   - Open a new terminal window and navigate to the web folder with ````cd /c/QAx/Apps/MarkL/web```` .
+   - Install web application dependencies with ````npm install````.
+   - Put the web application online with ````npm run dev````.
 
 
 8. Accessing the Application:
-   - Access the application in the browser at localhost:3000.
+   - Access the application in the browser at ````localhost:3000````.
 
 [Return to Index](#index)
 
