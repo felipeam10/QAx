@@ -1,13 +1,16 @@
 /// <reference types="cypress" />
 
 describe('tarefas', () => {
-    
+  
     it('deve cadastrar uma nova tarefa', () => {
+        
+        const taskName = 'Tarefa de teste'
+        
         cy.request({
             url: 'http://localhost:3333/helper/tasks',
             method: 'DELETE',
             body: {
-                name: 'Tarefa de teste'
+                name: taskName
             }
         }).then(response => {
             expect(response.status).to.eq(204)
@@ -16,20 +19,26 @@ describe('tarefas', () => {
         cy.visit('http://localhost:3000')
     
         cy.get('input[placeholder="Add a new Task"]')
-        .type('Tarefa de teste')    
+        .type(taskName)    
 
         cy.contains('button', 'Create').click()
 
-        cy.contains('main div p', 'Tarefa de teste')
+        cy.contains('main div p', taskName)
             .should('be.visible')
     })
 
     it('nao deve permitir uma tarefa duplicada', () => {
+        
+        const taskName1 = {
+            name: 'Learn SpringBoot with Java',
+            is_done: false
+        }
+        
         cy.request({
             url: 'http://localhost:3333/helper/tasks',
             method: 'DELETE',
             body: {
-                name: 'Learn SpringBoot with Java'
+                name: taskName1.name
             }
         }).then(response => {
             expect(response.status).to.eq(204)
@@ -40,10 +49,7 @@ describe('tarefas', () => {
         cy.request({
             url: 'http://localhost:3333/tasks',
             method: 'POST',
-            body: {
-                name: 'Learn SpringBoot with Java',
-                is_done: false
-            }
+            body: taskName1
         }).then(response => {
             expect(response.status).to.eq(201)
         })
@@ -52,7 +58,7 @@ describe('tarefas', () => {
         //Quando faço o cadastro dessa tarefa
         cy.visit('http://localhost:3000')
         cy.get('input[placeholder="Add a new Task"]')
-            .type('Learn SpringBoot with Java')    
+            .type(taskName1.name)    
         cy.contains('button', 'Create').click()
 
         //Então devo ver uma mensagem de duplicidade
