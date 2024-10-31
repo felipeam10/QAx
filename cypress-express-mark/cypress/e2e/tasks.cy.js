@@ -19,6 +19,9 @@ describe('tarefas', () => {
         .type('Tarefa de teste')    
 
         cy.contains('button', 'Create').click()
+
+        cy.contains('main div p', 'Tarefa de teste')
+            .should('be.visible')
     })
     
 })
