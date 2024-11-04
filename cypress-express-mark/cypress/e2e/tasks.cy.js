@@ -41,9 +41,31 @@ describe('tarefas', () => {
         })
         
     })
-      
     
+    context('atualizacao', () => {
+        
+        it.only('deve concluir uma tarefa', () => {
+            
+            const task = {
+                name: 'Marcar Tarefa de teste como concluída',
+                is_done: false
+            }
+            
+            cy.deleteTaskByName(task.name)
+            cy.postTask(task)
 
+            cy.visit('http://localhost:3000')
+            
+            cy.contains('p', task.name)
+                .parent()
+                .find('button[class*=ItemToggle]')
+                .click()
+
+            cy.contains('p', task.name)
+                .should('have.css', 'text-decoration-line', 'line-through')
+        })
+    
+    })
 
     
 })
