@@ -1,6 +1,15 @@
 /// <reference types="cypress" />
 
 describe('tarefas', () => {
+
+    let testData;
+
+    before(() => {
+
+        cy.fixture('tasks').then(data => {
+            testData = data
+        })
+    })
   
     context('cadastro', () => {
           
@@ -18,10 +27,7 @@ describe('tarefas', () => {
     
         it('nao deve permitir uma tarefa duplicada', () => {
             
-            const taskName1 = {
-                name: 'Learn SpringBoot with Java',
-                is_done: false
-            }
+            const taskName1 = testData.dup
             
             cy.deleteTaskByName(taskName1.name)
     
