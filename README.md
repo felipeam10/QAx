@@ -109,6 +109,11 @@ Many companies still perform tests manually.
 
 [Return to Index](#index)
 
+## Run tests with command line
+
+- For run the regressive tests ````yarn cypress run ````.
+- For run in other navigator ````yarn cypress run --browser chrome````.
+
 ## Technologies Used
 
 Before starting, make sure you have the Java environment correctly configured on your machine. Below you have a list of the technologies that were used in the project development process.

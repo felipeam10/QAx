@@ -4,3 +4,4 @@ cypress-express-mark/**
 apps/**
 /node_modules/**
 /.idea/**
+cypress-express-mark/cypress/videos/**
