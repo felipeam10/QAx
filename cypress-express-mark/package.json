@@ -4,6 +4,8 @@
   "devDependencies": {
     "@babel/core": "^7.25.8",
     "@babel/preset-env": "^7.25.8",
+    "@shelex/cypress-allure-plugin": "^2.40.2",
+    "allure-commandline": "^2.32.0",
     "babel-loader": "^9.2.1",
     "cypress": "12.2.0"
   }
