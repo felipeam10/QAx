@@ -1,4 +1,4 @@
-         <div align="left">
+<div align="left">
   <h1><strong>Cypress express mark</strong></h1>
 </div>
 
@@ -6,6 +6,9 @@
 
 - [About](#about)
 - [How to execute the project](#how-to-execute-the-project)
+- [QAx Directories](#qax-directories)
+- [Preparing the test environment](#preparing-the-test-environment)
+- [Run tests with command line](#run-tests-with-command-line)
 - [Used Technologies](#tecnologias-utilizadas)
 - [How to contribute](#como-contribuir)
 
@@ -114,18 +117,49 @@ Many companies still perform tests manually.
 - For run the regressive tests ````yarn cypress run ````.
 - For run in other navigator ````yarn cypress run --browser chrome````.
 
+## Run tests with command line for generate Allure report
+
+- Before, in file cypress-express-mark/package.json add:
+
+```.json
+  "@shelex/cypress-allure-plugin": "^2.40.2",
+  "allure-commandline": "^2.32.0",
+```
+
+- And in file ‎cypress-express-mark/cypress.config.js add:
+
+```.javascript
+const allureWriter = require('@shelex/cypress-allure-plugin/writer');
+
+module.exports = {
+  e2e: {
+    baseUrl: 'http://localhost:3000',
+    env: {
+        apiUrl: 'http://localhost:3333'
+    },
+    viewportWidth: 1920,
+    viewportHeight: 1080,
+    setupNodeEvents(on, config) {
+      // implement node event listeners here
+      allureWriter(on, config);
+      return config;
+    },
+  },
+};
+```
+- For run the regressive tests ````yarn cypress run --env allure=true````.
+- For build report ````yarn allure serve````.
+
 ## Technologies Used
 
 Before starting, make sure you have the Java environment correctly configured on your machine. Below you have a list of the technologies that were used in the project development process.
 
-| Technology                 | Version                                    |
-|----------------------------|--------------------------------------------|
-| Operating System           | Windows 10                                 |
-| Programming Language (JDK) | java 17.0.7 2023-04-18 LTS                 
-| Framework                  | Spring Boot 3.3.3                          |
-| Database                   | MySQL                                      |
-| IDE                        | IntelliJ IDEA 2023.1.1 (Community Edition) |
-| Container                  | Docker v4.24.2                             |
+| Technology           | Version        |
+|----------------------|----------------|
+| Operating System     | Windows 10     |
+| Programming Language | Javascript     |                 
+| Database             | SQLite         |
+| IDE                  | VS Code 1.96   |
 
 [Return to Index](#index)
 
